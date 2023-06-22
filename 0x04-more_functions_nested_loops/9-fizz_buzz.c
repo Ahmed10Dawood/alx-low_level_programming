@@ -22,7 +22,7 @@ int main(void)
 		else if (num % 3 != 0 && num % 5 != 0)
 			printf("%d", num);
 
-		putchar(num == end ? '\n' : ' ');
+		_putchar(num == end ? '\n' : ' ');
 		num++;
 	}
 	return (0);
