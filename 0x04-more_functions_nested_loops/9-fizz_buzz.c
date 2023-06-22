@@ -12,20 +12,22 @@
 
 int main(void)
 {
-	int num = 1, end = 100;
+	int num;
 
-	while (num <= 100)
+	for (num = 1; num <= 100; num++)
 	{
 		if (num % 3 == 0)
 			printf("fizz");
-		if (num % 5 == 0)
+		else if (num % 5 == 0)
 			printf("Buzz");
-		if (num % 3 != 0 && num % 5 != 0)
+		else if ((num % 3 == 0) && (num % 5 == 0))
+			printf("fizzBuzz");
+		else
 			printf("%d", num);
 
-		putchar(num == end ? '\n' : ' ');
-		num++;
+		if (num != 100)
+			printf(' ');
 	}
-
+	printf('\n');
 	return (0);
 }
