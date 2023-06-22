@@ -19,8 +19,6 @@ int main(void)
 			printf("fizz");
 		else if (num % 5 == 0 && num % 3 != 0)
 			printf("Buzz");
-		else if (num % 3 == 0 && num % 5 == 0)
-			printf("fizzBuzz");
 		else if (num == 1)
 			printf("%d", num);
 		else
