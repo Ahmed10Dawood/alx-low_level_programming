@@ -17,13 +17,14 @@ int main(void)
 	{
 		if (num % 3 == 0)
 			printf("fizz");
-		else if (num % 5 == 0)
+		if (num % 5 == 0)
 			printf("Buzz");
-		else if (num % 3 != 0 && num % 5 != 0)
+		if (num % 3 != 0 && num % 5 != 0)
 			printf("%d", num);
 
-		_putchar(num == end ? '\n' : ' ');
+		putchar(num == end ? '\n' : ' ');
 		num++;
 	}
+
 	return (0);
 }
