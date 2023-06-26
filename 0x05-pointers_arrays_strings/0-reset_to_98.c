@@ -1,11 +1,11 @@
 #include "main.h"
 
 /**
- * reset_to_98 - take a pointer and update it
+ * reset_to_98 - take a pointer and update it to 98
  *
- * @n: input for alphabet
+ * @n: int parameter
  *
- * Return: nothing
+ * Return: Nothing
 */
 
 void reset_to_98(int *n)
