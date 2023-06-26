@@ -5,7 +5,7 @@
  *
  * @n: int parameter
  *
- * Return: Nothing
+ * Return: n
 */
 
 void reset_to_98(int *n)
