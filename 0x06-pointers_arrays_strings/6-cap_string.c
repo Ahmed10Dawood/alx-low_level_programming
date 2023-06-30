@@ -1,63 +1,40 @@
 #include "main.h"
-#include <stdio.h>
-
-/**
- * isLower - convert from lower to capital
- *
- * @c: input for alphabet
- *
- * Return: 1 if upper, 0 if not
-*/
-
-int isLower(char c)
-{
-	return (c >= 97 && c <= 122);
-}
-
-/**
- * isDelimiter - convert from lower to capital
- *
- * @c: input for alphabet
- *
- * Return: 1 if upper, 0 if not
-*/
-
-int isDelimiter(char c)
-{
-	int i;
-	char delimiter[] = " \t\n,;.!?\"(){}";
-
-	for (i = 0; i < 13; i++)
-		if (c == delimiter[i])
-			return (1);
-	return (0);
-}
 
 /**
  * *cap_string - convert from lower to capital
  *
- * @s: input for alphabet
+ * @str: input for alphabet
  *
  * Return: string
 */
 
-char *cap_string(char *s)
+char *cap_string(char *str)
 {
-	int *ptr = s;
-	char fd = 1;
+	int index = 0;
 
-	while (*s)
+	while (str[index])
 	{
-		if (isDelimiter(*s))
-			fd = 1;
-		else if (isLower(*s) && fd)
-		{
-			*s -= 32;
-			fd = 0;
-		}
-		else
-			fd = 0;
-		s++;
+		while (!(str[index] >= 'a' && str[index] <= 'z'))
+			index++;
+
+		if (str[index - 1] == ' ' ||
+		    str[index - 1] == '\t' ||
+		    str[index - 1] == '\n' ||
+		    str[index - 1] == ',' ||
+		    str[index - 1] == ';' ||
+		    str[index - 1] == '.' ||
+		    str[index - 1] == '!' ||
+		    str[index - 1] == '?' ||
+		    str[index - 1] == '"' ||
+		    str[index - 1] == '(' ||
+		    str[index - 1] == ')' ||
+		    str[index - 1] == '{' ||
+		    str[index - 1] == '}' ||
+		    index == 0)
+			str[index] -= 32;
+
+		index++;
 	}
-	return (ptr);
+
+	return (str);
 }
